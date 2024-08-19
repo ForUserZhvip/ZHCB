@@ -1,0 +1,242 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Glow Text */
+.glow-text {
+    color: #00FFFF;
+    text-shadow: 0 0 20px #00FFFF, 0 0 30px #00FFFF, 0 0 40px #00FFFF;
+}
+
+/* Hero Section */
+#hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #0a0a0a 40%, #000000 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: url('cyber-grid.png') no-repeat center center;
+    background-size: cover;
+    transform: rotate(45deg);
+    opacity: 0.1;
+    animation: rotateBg 20s linear infinite;
+}
+
+@keyframes rotateBg {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 2;
+}
+
+.logo {
+    width: 150px;
+    margin-bottom: 20px;
+    animation: logoGlow 2s infinite;
+}
+
+@keyframes logoGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 10px #00FFFF);
+    }
+    50% {
+        filter: drop-shadow(0 0 20px #00FFFF);
+    }
+}
+
+.cta-button {
+    padding: 15px 30px;
+    background-color: #00FFFF;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, #00FFFF 10%, transparent 20%);
+    opacity: 0;
+    transition: opacity 0.4s, transform 0.4s;
+    transform: translate(-50%, -50%) scale(0);
+    pointer-events: none;
+}
+
+.cta-button:hover::before {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.glow-button {
+    box-shadow: 0 0 20px #00FFFF, 0 0 40px #00FFFF, 0 0 60px #00FFFF;
+}
+
+.glow-icon {
+    filter: drop-shadow(0 0 10px #00FFFF);
+    transition: filter 0.3s ease;
+}
+
+.glow-icon:hover {
+    filter: drop-shadow(0 0 20px #00FFFF);
+}
+
+/* Touch ID Section */
+#touch-id {
+    padding: 80px 20px;
+    background-color: #101010;
+    text-align: center;
+}
+
+#touch-id .cta-button {
+    margin-top: 20px;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Key Features Section */
+#features {
+    padding: 80px 20px;
+    background-color: #101010;
+    text-align: center;
+}
+
+.features-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.feature {
+    width: 300px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    margin-top: 15px;
+}
+
+/* Security Showcase Section */
+#showcase {
+    padding: 80px 20px;
+    background-color: #101010;
+    text-align: center;
+    position: relative;
+}
+
+#cyberCanvas {
+    width: 100%;
+    height: 400px;
+    background: #0a0a0a;
+    margin-bottom: 20px;
+}
+
+/* VIP Section */
+#vip {
+    padding: 80px 20px;
+    background-color: #000000;
+    text-align: center;
+}
+
+/* Contact Section */
+#contact {
+    padding: 80px 20px;
+    background-color: #101010;
+    text-align: center;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form .glow-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: #000000;
+    border: 1px solid #00FFFF;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+form .glow-input::placeholder {
+    color: #888888;
+}
+
+/* Footer */
+#footer {
+    padding: 20px;
+    background-color: #000000;
+    text-align: center;
+}
+#touch-id-setup .biometric-prompt {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #00FFFF;
+    text-shadow: 0 0 10px #00FFFF;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+#biometric-animation {
+    margin: 20px auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #00FFFF;
+    animation: bounce 1.2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
